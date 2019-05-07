@@ -6,11 +6,12 @@ import Loader from 'Components/Loader';
 const Container = styled.div`
   height: calc(100vh - 50px);
   width: 100%;
-  position: absolute;
+  position: relative;
+  padding: 50px;
 `;
 
 const Backdrop = styled.div`
-  position: absulute;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -18,7 +19,7 @@ const Backdrop = styled.div`
   background-image: url(${props => props.bgImage});
   background-position: center center;
   background-size: cover;
-  filter: blur(5px);
+  filter: blur(3px);
   opacity: 0.5;
   z-index: 0;
 `;
@@ -29,7 +30,6 @@ const Content = styled.div`
   position: relative;
   z-index: 1;
   height: 100%;
-  border-radius: 5px;
 `;
 
 const Cover = styled.div`
@@ -37,12 +37,13 @@ const Cover = styled.div`
   background-image: url(${props => props.bgImage});
   background-position: center center;
   background-size: cover;
-  heigth: 100%;
+  height: 100%;
+  border-radius: 5px;
 `;
 
 
-const DetailPresenter = ({ result, loading, error }) =>
-  loading ? (
+const DetailPresenter = ({ result, loading, error }) => {
+  return loading ? (
     <Loader />
   ) : (
       <Container>
@@ -53,6 +54,7 @@ const DetailPresenter = ({ result, loading, error }) =>
         </Content>
       </Container>
     );
+}
 
 DetailPresenter.propTypes = {
   result: PropTypes.object,
