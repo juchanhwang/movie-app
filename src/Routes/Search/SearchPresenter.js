@@ -24,7 +24,7 @@ const Input = styled.input`
 
 
 const SearchPresenter = ({ movieResults, tvResults, loading, searchTerm, handleSubmit, error, updateTerm }) =>
-  <Container>
+<Container>
     <Helmet>
       <title> Search | Nomflix </title>
     </Helmet>
@@ -73,6 +73,7 @@ const SearchPresenter = ({ movieResults, tvResults, loading, searchTerm, handleS
         )}
     </>}
   </Container>;
+
 
 SearchPresenter.propTypes = {
   movieResults: PropTypes.array,
